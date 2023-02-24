@@ -1,0 +1,12 @@
+<!-- View 1 -->
+<!-- <div *ngIf="!restaurants"> -->
+  <h3>List of Cuisines</h3>
+
+
+<div *ngIf="restaurants">
+  <ul>
+    <li *ngFor="let r of restaurants">
+      <a [routerLink]="['/api/cuisines', r.cuisine]">{{ r.cuisine }}</a>
+    </li>
+  </ul>
+</div>

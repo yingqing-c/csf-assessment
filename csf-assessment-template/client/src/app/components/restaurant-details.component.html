@@ -1,0 +1,39 @@
+<!-- View 3 -->
+
+<div *ngIf="!restaurant">
+  <h3>Loading..</h3>
+</div>
+<div *ngIf="restaurant">
+  <br>
+
+  <table>
+    <tr>
+        <td><h4>Name:</h4></td>
+        <td>{{ restaurant.name }}</td>
+    </tr>
+    <tr>
+        <td><h4>Cuisine:</h4></td>
+        <td>{{ restaurant.cuisine }}</td>
+    </tr>
+    <tr>
+        <td><h4>Address:</h4></td>
+        <td>{{ restaurant.address }}</td>
+    </tr>
+    <img [src]="restaurant.coordinates" [alt]="restaurant.coordinates" width="300">
+</table>
+</div>
+
+<div>
+  <form [formGroup]="commentForm" (ngSubmit)="postComment()">
+      <table>
+          <tr>
+              <td><textarea cols="30" rows="10"formControlName="comment"></textarea></td>
+              <td></td>
+          </tr>
+          <tr>
+              <td><button type="submit">Post Comment</button></td>
+              <td><button type="button" [routerLink]="['/api/comments', name]">Cancel</button></td>
+          </tr>
+      </table>
+  </form>
+</div>

@@ -1,0 +1,16 @@
+<!-- View 2 -->
+<!-- list of <cuisine> restaurants -->
+<div class="cuisine-list">
+
+  <mat-card *ngFor="let restaurant of restaurants">
+    <mat-card-header>
+      <mat-card-title>List of {{restaurant.cuisine}} Restaurants</mat-card-title>
+  </mat-card-header>
+    <mat-card-content>{{ restaurant.cuisine }}</mat-card-content>
+  </mat-card>
+</div>
+
+<!-- pagination buttons -->
+<div class="button-row">
+  <!-- disable prev button when on first page -->
+  <button [routerLink]="['/']" mat-flat-button color="primary">Back</button>
